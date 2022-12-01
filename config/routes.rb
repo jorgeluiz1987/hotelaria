@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
    
-  resources :hotel
+  resources :hotel, only: [:new, :create]
  
 end
+

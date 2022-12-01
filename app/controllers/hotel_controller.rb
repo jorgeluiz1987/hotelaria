@@ -1,17 +1,21 @@
 class HotelController < ApplicationController
 
 
-    def new
+    def new 
+      puts '1'
+      puts params
+     
         @hotel = Hotel.new
       end
 
     def create
+      puts '2'
         @hotel = Hotel.new(hotel_params)
     
         if @hotel.save
-          redirect_to @hotel
+          redirect_to :new
         else
-          render :new, status: :unprocessable_entity
+          render :new
         end
       end
 
